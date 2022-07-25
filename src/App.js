@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Context from './context/context';
+import Home from './pages/Home';
+import { images } from './assets';
 
 function App() {
+  const [language, setLanguage] = useState('ES');
+  const toggleLanguage = () => {
+    setLanguage(prev => prev === 'ES' ? 'EN' :'ES');
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Context.Provider value={{ language, toggleLanguage }}>
+      <div className='w-full bg-center bg-no-repeat bg-cover' style={{ backgroundImage:`url(${images.headerBg})` }}>
+        <Home />
+      </div>
+    </Context.Provider>
   );
 }
 
