@@ -25,9 +25,13 @@ const Modal = ({ openModal, setOpenModal, modalContent }) => {
               <img width='20px' src={icons.close} alt="" />
             </button>
             <div className='shadow-2xl shadow-white border-2 bg-[#111] absolute h-[90vh] w-[90%] top-8 overflow-y-scroll align-center p-2 sm:p-10' >
-              <div className='absolute top-0 right-0 bg-[#36FCD8] opacity-80 border rounder-[50%] w-[150px] h-[150px] blur-[100px]'></div>
-              <div className='absolute bottom-0 left-0 bg-[#D11DEE] opacity-80 border rounder-[50%] w-[150px] h-[150px] blur-[150px]'></div>
-              <div className='absolute bottom-[45%] left-[45%] bg-[#FCEEFC] opacity-80 border rounder-[50%] w-[150px] h-[150px] blur-[150px]'></div>
+              { modalContent === 'about' && (
+                <>
+                <div className='absolute top-0 right-0 bg-[#36FCD8] opacity-80 border rounder-[50%] w-[150px] h-[150px] blur-[100px]'></div>
+                <div className='absolute bottom-0 left-0 bg-[#D11DEE] opacity-80 border rounder-[50%] w-[150px] h-[150px] blur-[150px]'></div>
+                <div className='absolute bottom-[45%] left-[45%] bg-[#FCEEFC] opacity-80 border rounder-[50%] w-[150px] h-[150px] blur-[150px]'></div>
+                </>
+              )}
               <div className='z-40'>
               { modalContent === 'about' && <About /> }
               { modalContent === 'projects' && <Projects />}

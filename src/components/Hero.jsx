@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import Context from '../context/context';
 import { texts } from '../constants';
 import Rings3D from './animations/Rings3D/Rings3D';
-import { images } from '../assets';
 
 const Hero = ({openModal}) => {
   const { language } = useContext(Context);
